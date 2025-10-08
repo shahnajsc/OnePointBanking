@@ -1,0 +1,15 @@
+--Create main folder
+	mkdir -p tpp_registration
+	cd ~/tpp_registration
+
+--Create subfolders
+	mkdir -p conf cert config scripts
+
+--Create virtual environment
+	python3 -m venv .venv
+	source .venv/bin/activate
+--Create requirements.txt
+	echo "requests\ncryptography\nPyJWT\npython-dotenv" > requirements.txt
+
+--Install dependencies
+	pip install -r requirements.txt
