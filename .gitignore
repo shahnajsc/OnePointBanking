@@ -3,4 +3,4 @@
 # vs files
 /.vscode
 # env file
-env.json
+/env.json
