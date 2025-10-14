@@ -1,6 +1,6 @@
 --Create main folder
-	mkdir -p tpp_registration
-	cd ~/tpp_registration
+	mkdir -p tpp_registration_op
+	cd ~/tpp_registration_op
 
 --Create subfolders
 	mkdir -p conf cert config scripts
