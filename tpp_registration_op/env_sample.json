@@ -1,0 +1,8 @@
+{
+  "api_key": "YOUR_SANDBOX_API_KEY",
+  "country": "FI",
+  "tpp_name": "You TPP name",
+  "roles": "AIS,PIS,CBPII",
+  "sandbox_url": "OP sandbox-tpp url",
+  "registration_url": "OP sandbox tpp-registration 'register' url "
+}
