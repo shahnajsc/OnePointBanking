@@ -1,0 +1,6 @@
+# System files
+/.DS_Store
+# vs files
+/.vscode
+# env file
+env.json
