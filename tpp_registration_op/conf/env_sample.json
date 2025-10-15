@@ -1,0 +1,27 @@
+{
+  "api_key": "YOUR_SANDBOX_API_KEY",
+  "country": "FI",
+  "tpp_name": "You TPP name",
+  "roles": "AIS,PIS,CBPII",
+  "sandbox_url": "OP sandbox-tpp url",
+  "registration_url": "OP sandbox tpp-registration 'register' url ",
+  "redirect_uris": [
+    "https://https://opb.test.com/redirect-url1",
+    "https://https://opb.test.com/redirect-url2",
+    "https://https://opb.test.com/redirect-url3"
+  ],
+  "software_redirect_uris": [
+    "https://https://opb.test.com/redirect-url1",
+    "https://https://opb.test.com/redirect-url2",
+    "https://https://opb.test.com/redirect-url3"
+  ],
+  "software_client_uri": "https://opb.test.com",
+  "org_contacts": [
+    {
+    "name": "NAME",
+    "email": "s.test@gmail.com",
+    "phone": "+111111",
+    "type": "Service"
+    }
+  ]
+}
