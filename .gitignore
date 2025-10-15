@@ -2,5 +2,10 @@
 /.DS_Store
 # vs files
 /.vscode
+/.venv
+/tpp_registration_op/certs
 # env file
-/env.json
+env.json
+registration_jwt.txt
+response.json
+ssa.jwt
