@@ -22,9 +22,9 @@ def generate_reg_jwt(env, ssa_info):
 		"software_roles": env.get("roles", "").split(","),
 		"software_jwks_endpoint": ssa_info.get("public_jwks_url"),
 		"software_redirect_uris": env.get("software_redirect_uris", []),
-		"software_client_name": env.get("tpp_name"),
+		"software_client_name": env.get("software_client_name"),
 		"software_client_uri": env.get("software_client_uri", ""),
-		"org_name": env.get("tpp_name"),
+		"org_name": env.get("org_name"),
 		"org_id": ssa_info.get("tpp_id"),
 		"org_contacts": env.get("org_contacts", [])
 	}
