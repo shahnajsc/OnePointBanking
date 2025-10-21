@@ -3,13 +3,12 @@
 # vs files
 /.vscode
 /.venv
-/tpp_registration_op/certs/public_jwks.json
 /tpp_registration_op/certs/qseal_cert.pem
 /tpp_registration_op/certs/qseal_key.pem
 /tpp_registration_op/certs/qwac_cert.pem
 /tpp_registration_op/certs/qwac_key.pem
+/tpp_registration_op/certs/ttp_info.json
 # env file
 /tpp_registration_op/conf/env.json
-/tpp_registration_op/conf/registration_jwt.txt
-/tpp_registration_op/conf/response.json
-/tpp_registration_op/conf/ssa.jwt
+
+
