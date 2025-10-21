@@ -48,7 +48,7 @@ TPP Registration
 │
 ├── Calls → OP’s TPP Validation API endpoint
 │       ↓
-│       Verify → confirms TPP client registration via OAuth token exchange
+│       Verify → confirms TPP client registration via authentication token exchange
 │
 └── ✅ Returns → TPP registration confirmation
 ```
