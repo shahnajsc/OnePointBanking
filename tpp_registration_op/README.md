@@ -17,7 +17,8 @@ financial service provider that connects to a bank’s API on behalf of customer
 - Registers the TPP with OP’s sandbox.
 - Validates the registration by exchanging credentials for an access token.
 - Saves all generated artifacts (certs, keys, client info) for reference.
-This is particularly useful for developers, QA engineers, and integrators who need to onboard TPP clients automatically in the OP PSD2 sandbox.
+
+ This is particularly useful for developers, QA engineers, and integrators who need to onboard TPP clients automatically in the OP PSD2 sandbox.
 
 ## 🚀 TPP Registration Flow
 
@@ -52,4 +53,21 @@ TPP Registration
 └── ✅ Returns → TPP registration confirmation
 ```
 
+## ⚙️ How to Use
+- Get access to OP’s PSD2 Sandbox environment.
+- Create a new applicationin in OP Developer Portal to obtain your API Key.
+- Create env.json file and fill your own information (check conf/env_example.json) for environment variables
+- Install dependencies
+  ```
+  pip install -r requirements.txt
+  ```
+- Create and activate a virtual environment
+  ```
+  python3 -m venv .venv
+  source .venv/bin/activate
+  ```
+- Run the main script
+  ```
+  python3 main.py
+  ```
 
