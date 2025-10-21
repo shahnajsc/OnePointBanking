@@ -31,9 +31,6 @@ def generate_reg_jwt(env, ssa_info):
 
 	ssa = jwt.encode(ssa_payload, qseal_key_pem, algorithm=ssa_info.get("alg"), headers=headrs)
 
-	open("conf/ssa.jwt", "w").write(ssa)
-	print("✅ Wrote conf/ssa.jwt")
-
 	reg_payload = {
 		"iat": time_now,
 		"exp": time_now + 3600,  # valid for 1 hour
@@ -46,8 +43,6 @@ def generate_reg_jwt(env, ssa_info):
 
 	registration_jwt = jwt.encode(reg_payload, qseal_key_pem, algorithm=ssa_info.get("alg"), headers=headrs)
 
-	with open("conf/registration_jwt.txt", "w") as f:
-		f.write(registration_jwt)
-		print("✅ Wrote conf/registration_jwt.txt")
+	print("✅ Token created successfully for registration!")
 
 	return registration_jwt
