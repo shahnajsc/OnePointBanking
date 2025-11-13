@@ -1,4 +1,4 @@
-## 📌 TPP Registration Automation (Python)
+## TPP Registration Automation (Python)
 
 This project automates the Third-Party Provider (TPP) registration flow with OP Financial Group’s (Finland) PSD2 APIs (sandbox) using Python. It performs every step of the onboarding process — from certificate generation to TPP registration validation.
 
@@ -9,7 +9,7 @@ external entities TPPs (Third-Party Providers) must first register with the ASPS
 financial service provider that connects to a bank’s API on behalf of customers.
 ```
 
-## ✨ What this project does:
+## What this project does
 
 - Generates QWAC/QSEAL Certificates from the OP Sandbox API.
 - Builds and signs a Software Statement Assertion (SSA) JWT.
@@ -20,7 +20,7 @@ financial service provider that connects to a bank’s API on behalf of customer
 
  This is particularly useful for developers, QA engineers, and integrators who need to onboard TPP clients automatically in the OP PSD2 sandbox.
 
-## 🚀 TPP Registration Flow
+## TPP Registration Flow
 
 ```text
 TPP Registration
@@ -50,10 +50,10 @@ TPP Registration
 │       ↓
 │       Verify → confirms TPP client registration via authentication token exchange
 │
-└── ✅ Returns → TPP registration confirmation
+└── Returns → TPP registration confirmation
 ```
 
-## ⚙️ How to Use
+## How to Use
 - Get access to OP’s PSD2 Sandbox environment.
 - Create a new applicationin in OP Developer Portal to obtain your API Key.
 - Create env.json file and fill your own information (check conf/env_example.json) for environment variables
