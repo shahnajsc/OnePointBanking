@@ -11,7 +11,7 @@ The system is structured into four major components, following PSD2 Third Party 
 ### TPP Registration & PSD2 Setup
 Handles onboarding with Bank's Sandbox, registering redirect URIs, and obtaining TPP credentials under PSD2 regulations. Enables secure consent flows (AIS/PIS) and Strong Customer Authentication (SCA) required for accessing user banking data.
 
-**Tech Stack:** Python, Sandbox APIs
+**Tech Stack:** Go, Sandbox APIs
 
 ### Frontend Application
 A Web application where customers connect their bank accounts, view balances, and explore financial insights. Implements SCA redirect flow and future dashboards for analytics.
@@ -21,7 +21,7 @@ A Web application where customers connect their bank accounts, view balances, an
 ### Backend API
 Serves as the secure middleware layer that manages consent initiation, OAuth2 callback handling, and PSD2 token exchanges. Fetches accounts, balances, and transactions from bank's sandbox APIs and exposes clean endpoints to the frontend.
 
-**Tech Stack:** Node.js, Fastify, TypeScript, PostgreSQL, Docker
+**Tech Stack:** Go, PostgreSQL, Docker
 
 ### Analytics Layer
 Transforms raw PSD2 transaction history into structured financial insights using an ETL pipeline.
@@ -97,15 +97,14 @@ TPP Registration
 - Create env.json file and fill your own information (check conf/env_example.json) for environment variables
 - Install dependencies
   ```
-  pip install -r requirements.txt
+
   ```
 - Create and activate a virtual environment
   ```
-  python3 -m venv .venv
-  source .venv/bin/activate
+
   ```
 - Run the main script
   ```
-  python3 main.py
+
   ```
 
