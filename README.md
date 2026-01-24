@@ -1,7 +1,7 @@
-# One Point Banking
+# One Point Ledger
 A PSD2/TPP compliant multi-bank financial platform.
 
-One Point Banking is an ongoing full-stack project designed to explore real world PSD2 (Sandbox APIs) banking integration and data driven web application development.
+One Point Ledger is an ongoing full-stack project designed to explore real world PSD2 (Sandbox APIs) banking integration and data driven web application development.
 
 The goal of this project is to allow users to securely connect multiple bank accounts through a single interface, view balances, access transaction history, and eventually generate meaningful financial insights from data.
 
