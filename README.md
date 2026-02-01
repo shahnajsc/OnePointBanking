@@ -11,7 +11,7 @@ The system is structured into four major components, following PSD2 Third Party 
 ### TPP Registration & PSD2 Setup
 Handles onboarding with Bank's Sandbox, registering redirect URIs, and obtaining TPP credentials under PSD2 regulations. Enables secure consent flows (AIS/PIS) and Strong Customer Authentication (SCA) required for accessing user banking data.
 
-**Tech Stack:** Go, Sandbox APIs
+**Tech Stack:** Python, Sandbox APIs
 
 ### Frontend Application
 A Web application where customers connect their bank accounts, view balances, and explore financial insights. Implements SCA redirect flow and future dashboards for analytics.
