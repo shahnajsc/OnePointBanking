@@ -14,7 +14,7 @@ def register_tpp(env, reg_jwt):
 	response = requests.post(env.get("registration_url"), data=reg_jwt, headers=headers, cert=qwac_cert, verify=False)
 
 	if response.status_code != 201:
-		raise SystemExit("❌ TPP registration request failed")
+		raise SystemExit("TPP registration request failed")
 
 	print("✅ TPP Registration Successful. Proceeding for Validation")
 
@@ -35,6 +35,6 @@ def register_tpp(env, reg_jwt):
 
 	token_resp = requests.post(token_url, data=data, cert=qwac_cert, verify=False)
 	if token_resp.status_code != 200:
-		raise SystemExit("❌ TPP validation failed")
+		raise SystemExit("TPP validation failed")
 
 	print("✅ TPP Validation Successful.")
