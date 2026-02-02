@@ -1,60 +1,28 @@
 services:
-
-  frontend:
-    container_name: opb_frontend
-    restart: no # change it to 'always' when in production
-    env_file:
-      - .env
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-    networks:
-      - opbnet
-
-  backend:
-    container_name: opb_backend
-    restart: no # change it to 'always' when in production
-    env_file:
-      - .env
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "4000:4000"
-    depends_on:
-      database:
-        condition: service_healthy
-    networks:
-      - opbnet
-
   database:
-    container_name: opb_postgresDB
+    container_name: opl_psDB
     image: postgres:16
-    restart: always
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: ${OPB_DB_USER}
-      POSTGRES_PASSWORD: ${OPB_DB_PASS}
-      POSTGRES_DB: ${OPB_DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${OPB_DB_USER} -d ${OPB_DB_NAME}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 10s
       timeout: 5s
       retries: 5
     ports:
       - "5432:5432"
     volumes:
-      - opbdata:/var/lib/postgresql/data
+      - opldata:/var/lib/postgresql/data
     networks:
-      - opbnet
+      - oplnet
 
 networks:
-  opbnet:
-    name: opbnet
+  oplnet:
+    name: oplnet
     driver: bridge
 
 volumes:
-  opbdata:
+  opldata:
