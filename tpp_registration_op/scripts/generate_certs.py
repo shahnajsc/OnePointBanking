@@ -14,12 +14,12 @@ def generate_certs(env):
 	}
 
 	# Send POST request to OP Sandbox
-	print("🚀 Sending request for certificates")
+	print("Sending request for certificates")
 	response = requests.post(url, headers=headers)
 
 	if response.status_code != 201:
 		print(" Status:", response.status_code)
-		raise SystemExit("❌ Certificate generation request failed")
+		raise SystemExit("Certificate generation request failed")
 
 	data = response.json()
 
@@ -59,7 +59,7 @@ def generate_certs(env):
 		try:
 			priv_pem = jwk_obj.export_to_pem(private_key=True, password=None)
 		except Exception as e:
-			print("❌ Error exporting private key for", kid, e)
+			print("Error exporting private key for", kid, e)
 			continue
 
 		if "qwac" in k_lower:
@@ -68,6 +68,6 @@ def generate_certs(env):
 			open(os.path.join(CERT_DIR, "qseal_key.pem"), "wb").write(priv_pem)
 
 
-	print("✅ Certificates received successfully!")
+	print("Certificates received successfully!")
 
 	return ssa_info
