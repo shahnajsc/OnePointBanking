@@ -1,4 +1,5 @@
 requests
+jwcrypto
 cryptography
 PyJWT
 python-dotenv
