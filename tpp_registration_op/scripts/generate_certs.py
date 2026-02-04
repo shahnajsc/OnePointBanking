@@ -22,6 +22,7 @@ def generate_certs(env):
 		raise SystemExit("Certificate generation request failed")
 
 	data = response.json()
+	print(data)
 
 	CERT_DIR = "certs"
 	os.makedirs(CERT_DIR, exist_ok=True)
