@@ -23,6 +23,7 @@ def register_tpp(env, reg_jwt):
 		json.dump(tpp_info, tpp_write, indent=2)
 
 	client_id = tpp_info.get("client_id", None)
+	print(client_id)
 	client_secret = tpp_info.get("client_secret", None)
 
 	data = {

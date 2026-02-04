@@ -26,6 +26,7 @@ func NewAuthService(users *repo.UserRepo, jwtSecret string) *AuthService {
 }
 
 func (s *AuthService) Signup(ctx context.Context, email, password string) (model.User, error) {
+	// TODO: more validation
 	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
 		return model.User{}, err
@@ -34,6 +35,7 @@ func (s *AuthService) Signup(ctx context.Context, email, password string) (model
 }
 
 func (s *AuthService) Login(ctx context.Context, email, password string) (string, error) {
+	// TODO: more validation 
 	u, err := s.users.GetByEmail(ctx, email)
 	if err != nil {
 		return "", err
