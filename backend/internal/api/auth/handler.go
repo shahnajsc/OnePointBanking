@@ -6,8 +6,10 @@ import (
 	"strings"
 	"time"
 	"context"
+	"errors"
 
 	"github.com/shahnajsc/OnePointLedger/backend/internal/service"
+	"github.com/jackc/pgx/v5/pgconn"
 )
 
 type Handler struct {
@@ -43,7 +45,11 @@ func (h *Handler) Signup(w http.ResponseWriter, r *http.Request) {
 
 	u, err := h.auth.Signup(ctx, c.Email, c.Password)
 	if err != nil {
-		// TODO: unique email handle
+		var pgErr *pgconn.PgError
+		if errors.As(err, &pgErr) && pgErr.Code == "23505" {
+			http.Error(w, "email already registered", http.StatusConflict)
+			return
+		}
 		http.Error(w, "could not create user", http.StatusBadRequest)
 		return
 	}
@@ -75,7 +81,7 @@ func (h *Handler) Login(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, map[string]string{"token": token}, http.StatusOK)
 }
 
-// helper func
+// Helper func
 func writeJSON(w http.ResponseWriter, v any, status int) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
